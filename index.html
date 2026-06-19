@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nail Salon - Giao diện mẫu</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind Custom Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        salonCream: '#FAF8F5',
+                        salonDark: '#2C2621',
+                        salonGold: '#C5A880',
+                        salonAccent: '#E5D5C5',
+                        salonSoft: '#8C827A'
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #FAF8F5;
+            color: #2C2621;
+        }
+        .font-serif-title {
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- NAVIGATION BAR -->
+    <nav class="sticky top-0 z-50 bg-salonCream/90 backdrop-blur-md border-b border-salonAccent/30 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="#" class="font-serif-title text-2xl font-bold tracking-wider text-salonDark">
+                        CHARM<span class="text-salonGold">NAILS</span>
+                    </a>
+                </div>
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#trang-chu" class="text-salonDark hover:text-salonGold font-medium transition-colors">Trang chủ</a>
+                    <a href="#gioi-thieu" class="text-salonDark hover:text-salonGold font-medium transition-colors">Giới thiệu</a>
+                    <a href="#dich-vu" class="text-salonDark hover:text-salonGold font-medium transition-colors">Dịch vụ & Bảng giá</a>
+                    <a href="#lien-he" class="text-salonDark hover:text-salonGold font-medium transition-colors">Liên hệ</a>
+                    <a href="#dat-lich" class="bg-salonDark text-salonCream px-6 py-2.5 rounded-full font-medium hover:bg-salonGold hover:text-salonDark transition-all duration-300 shadow-sm">
+                        Đặt Lịch Ngay
+                    </a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-salonDark hover:text-salonGold focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden bg-salonCream border-b border-salonAccent/40 px-4 pt-2 pb-6 space-y-3 shadow-lg">
+            <a href="#trang-chu" class="block text-salonDark hover:text-salonGold font-medium py-2">Trang chủ</a>
+            <a href="#gioi-thieu" class="block text-salonDark hover:text-salonGold font-medium py-2">Giới thiệu</a>
+            <a href="#dich-vu" class="block text-salonDark hover:text-salonGold font-medium py-2">Dịch vụ & Bảng giá</a>
+            <a href="#lien-he" class="block text-salonDark hover:text-salonGold font-medium py-2">Liên hệ</a>
+            <a href="#dat-lich" class="block text-center bg-salonDark text-salonCream px-6 py-3 rounded-full font-medium hover:bg-salonGold hover:text-salonDark transition-all">
+                Đặt Lịch Ngay
+            </a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="trang-chu" class="relative min-h-[calc(100vh-80px)] flex items-center justify-center bg-zinc-900 overflow-hidden">
+        <!-- Mock Background Image via CSS Pattern & Gradients for clean look -->
+        <div class="absolute inset-0 bg-cover bg-center opacity-40 transform scale-105 transition-transform duration-10000" style="background-image: url('https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&q=80&w=1920');"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-salonDark via-salonDark/80 to-transparent"></div>
+        
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-10 py-20 text-left">
+            <span class="inline-block text-salonGold font-semibold tracking-widest text-xs uppercase mb-3 bg-salonGold/10 px-3 py-1 rounded-full border border-salonGold/20">
+                Chào mừng tới Charm Nails
+            </span>
+            <h1 class="font-serif-title text-4xl sm:text-5xl lg:text-6xl font-normal text-salonCream tracking-wide max-w-3xl leading-tight mb-6">
+                Nâng niu bàn tay Việt, <br class="hidden sm:inline"><span class="italic text-salonGold font-light">Khơi dậy nét kiêu sa</span>
+            </h1>
+            <p class="text-salonCream/80 text-base sm:text-lg max-w-xl mb-10 font-light leading-relaxed">
+                Không gian thư giãn sang trọng cùng dịch vụ chăm sóc móng chuẩn quốc tế, mang lại vẻ đẹp hoàn mỹ độc bản cho riêng bạn.
+            </p>
+            <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                <a href="#dat-lich" class="inline-block text-center bg-salonGold text-salonDark font-medium px-8 py-4 rounded-full hover:bg-salonCream hover:scale-105 transition-all duration-300 shadow-lg">
+                    Đặt hẹn trực tuyến
+                </a>
+                <a href="#dich-vu" class="inline-block text-center border border-salonCream/40 text-salonCream font-medium px-8 py-4 rounded-full hover:bg-salonCream/10 transition-all duration-300">
+                    Xem bảng giá
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT & TRUST SIGNALS -->
+    <section id="gioi-thieu" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+            <!-- Text Content -->
+            <div class="lg:col-span-7">
+                <span class="text-salonGold uppercase font-semibold tracking-wider text-xs block mb-2">Câu chuyện của chúng tôi</span>
+                <h2 class="font-serif-title text-3xl sm:text-4xl font-semibold text-salonDark mb-6 leading-snug">
+                    Hành trình kiến tạo <br>Vẻ đẹp từ sự tận tâm
+                </h2>
+                <p class="text-salonSoft leading-relaxed mb-6 font-light">
+                    Được thành lập từ tình yêu cái đẹp thuần khiết, Charm Nails không chỉ đơn thuần là một tiệm làm móng mà còn là không gian nghệ thuật, nơi từng chi tiết nhỏ trên đôi tay bạn được trân trọng và chăm sóc một cách hoàn hảo nhất.
+                </p>
+                <p class="text-salonSoft leading-relaxed mb-10 font-light">
+                    Chúng tôi tin rằng, một bộ móng đẹp không chỉ tôn lên phong cách cá nhân mà còn đem lại sự tự tin, khơi nguồn cảm hứng tích cực cho cuộc sống thường nhật của mọi người phụ nữ.
+                </p>
+                
+                <!-- Trust Signals Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                    <div class="p-6 bg-white rounded-2xl border border-salonAccent/20 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 bg-salonCream flex items-center justify-center rounded-xl text-salonGold mb-4">
+                            <i class="fa-solid fa-hand-sparkles text-xl"></i>
+                        </div>
+                        <h4 class="font-semibold text-salonDark text-sm mb-1">Sản phẩm Organic</h4>
+                        <p class="text-xs text-salonSoft font-light">Lành tính, an toàn tuyệt đối cho da và móng của khách hàng.</p>
+                    </div>
+                    <div class="p-6 bg-white rounded-2xl border border-salonAccent/20 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 bg-salonCream flex items-center justify-center rounded-xl text-salonGold mb-4">
+                            <i class="fa-solid fa-user-shield text-xl"></i>
+                        </div>
+                        <h4 class="font-semibold text-salonDark text-sm mb-1">Chuẩn y tế</h4>
+                        <p class="text-xs text-salonSoft font-light">Dụng cụ tiệt trùng 100% bằng máy hấp chuyên dụng trước khi dùng.</p>
+                    </div>
+                    <div class="p-6 bg-white rounded-2xl border border-salonAccent/20 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 bg-salonCream flex items-center justify-center rounded-xl text-salonGold mb-4">
+                            <i class="fa-solid fa-award text-xl"></i>
+                        </div>
+                        <h4 class="font-semibold text-salonDark text-sm mb-1">Kỹ thuật viên 5★</h4>
+                        <p class="text-xs text-salonSoft font-light">Đội ngũ có chứng chỉ quốc tế và mắt thẩm mỹ tinh tế cao.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Image Block (Right) -->
+            <div class="lg:col-span-5 relative">
+                <div class="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl relative z-10">
+                    <img src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?auto=format&fit=crop&q=80&w=800" alt="Nail Art Process" class="w-full h-full object-cover">
+                </div>
+                <!-- Decorative Frame decorative element -->
+                <div class="absolute -inset-4 border border-salonGold rounded-3xl pointer-events-none transform translate-x-8 translate-y-8 z-0 hidden sm:block opacity-40"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES & PRICING -->
+    <section id="dich-vu" class="py-24 bg-white border-y border-salonAccent/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-salonGold uppercase font-semibold tracking-wider text-xs block mb-2">Menu & Chi phí</span>
+                <h2 class="font-serif-title text-3xl sm:text-4xl font-semibold text-salonDark mb-4">Dịch Vụ Phong Phú</h2>
+                <p class="text-salonSoft font-light text-sm sm:text-base">Giá cả minh bạch, không phát sinh chi phí phụ. Vui lòng tham khảo các danh mục dịch vụ mũi nhọn của tiệm chúng tôi.</p>
+            </div>
+
+            <!-- Pricing Layout Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+                <!-- Group 1 -->
+                <div class="space-y-8">
+                    <h3 class="font-serif-title text-xl font-medium text-salonDark border-b border-salonAccent pb-3 flex items-center">
+                        <span class="bg-salonCream text-salonGold w-8 h-8 rounded-full inline-flex items-center justify-center mr-3 text-sm"><i class="fa-solid fa-circle-dot"></i></span>
+                        Chăm Sóc Cơ Bản
+                    </h3>
+                    <div class="space-y-6">
+                        <!-- Item -->
+                        <div class="flex justify-between items-start group">
+                            <div class="pr-4">
+                                <h4 class="font-medium text-salonDark group-hover:text-salonGold transition-colors">Cắt da & Dũa tạo form móng</h4>
+                                <p class="text-xs text-salonSoft font-light mt-1">Làm sạch lớp tế bào chết, dũa phom chuẩn vuông/tròn/oval (30 phút)</p>
+                            </div>
+                            <span class="font-semibold text-salonDark whitespace-nowrap text-right">80.000 đ</span>
+                        </div>
+                        <!-- Item -->
+                        <div class="flex justify-between items-start group">
+                            <div class="pr-4">
+                                <h4 class="font-medium text-salonDark group-hover:text-salonGold transition-colors">Chà gót chân làm hồng mịn</h4>
+                                <p class="text-xs text-salonSoft font-light mt-1">Tẩy tế bào chết gót chân bằng tế bào gốc và dưỡng ẩm sâu (45 phút)</p>
+                            </div>
+                            <span class="font-semibold text-salonDark whitespace-nowrap text-right">150.000 đ</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Group 2 -->
+                <div class="space-y-8">
+                    <h3 class="font-serif-title text-xl font-medium text-salonDark border-b border-salonAccent pb-3 flex items-center">
+                        <span class="bg-salonCream text-salonGold w-8 h-8 rounded-full inline-flex items-center justify-center mr-3 text-sm"><i class="fa-solid fa-wand-magic-sparkles"></i></span>
+                        Sơn & Thiết Kế Nghệ Thuật
+                    </h3>
+                    <div class="space-y-6">
+                        <!-- Item -->
+                        <div class="flex justify-between items-start group">
+                            <div class="pr-4">
+                                <h4 class="font-medium text-salonDark group-hover:text-salonGold transition-colors">Sơn Gel Hàn/Nhật cao cấp</h4>
+                                <p class="text-xs text-salonSoft font-light mt-1">Sử dụng các dòng sơn organic bền màu, bóng mượt đến 4 tuần (40 phút)</p>
+                            </div>
+                            <span class="font-semibold text-salonDark whitespace-nowrap text-right">180.000 đ</span>
+                        </div>
+                        <!-- Item -->
+                        <div class="flex justify-between items-start group">
+                            <div class="pr-4">
+                                <h4 class="font-medium text-salonDark group-hover:text-salonGold transition-colors">Ẩn xà cừ / Vẽ Nail Art độc quyền</h4>
+                                <p class="text-xs text-salonSoft font-light mt-1">Thiết kế mẫu vẽ theo yêu cầu hoặc đính đá khối pha lê tinh xảo (60-90 phút)</p>
+                            </div>
+                            <span class="font-semibold text-salonDark whitespace-nowrap text-right">Từ 250.000 đ</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE BOOKING FORM (UI ONLY) -->
+    <section id="dat-lich" class="py-24 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-white rounded-3xl p-8 sm:p-12 border border-salonAccent/20 shadow-xl relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-2 h-full bg-salonGold"></div>
+            
+            <div class="text-center mb-10">
+                <h2 class="font-serif-title text-2xl sm:text-3xl font-semibold text-salonDark mb-2">Đặt Hẹn Giữ Chỗ</h2>
+                <p class="text-salonSoft text-sm font-light">Chỉ mất 1 phút để chọn khung giờ phù hợp, tiệm sẽ liên hệ xác nhận ngay.</p>
+            </div>
+
+            <!-- Form Layout -->
+            <form id="bookingForm" onsubmit="handleBookingSubmit(event)" class="space-y-6">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <!-- Name -->
+                    <div>
+                        <label class="block text-xs font-semibold uppercase text-salonDark tracking-wider mb-2">Họ và tên *</label>
+                        <input type="text" required placeholder="Nguyễn Văn A" class="w-full px-4 py-3 rounded-xl border border-salonAccent bg-salonCream/30 focus:outline-none focus:border-salonGold focus:ring-1 focus:ring-salonGold transition-all">
+                    </div>
+                    <!-- Phone -->
+                    <div>
+                        <label class="block text-xs font-semibold uppercase text-salonDark tracking-wider mb-2">Số điện thoại *</label>
+                        <input type="tel" required placeholder="0901234567" class="w-full px-4 py-3 rounded-xl border border-salonAccent bg-salonCream/30 focus:outline-none focus:border-salonGold focus:ring-1 focus:ring-salonGold transition-all">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <!-- Date -->
+                    <div>
+                        <label class="block text-xs font-semibold uppercase text-salonDark tracking-wider mb-2">Chọn ngày hẹn *</label>
+                        <input type="date" required class="w-full px-4 py-3 rounded-xl border border-salonAccent bg-salonCream/30 focus:outline-none focus:border-salonGold focus:ring-1 focus:ring-salonGold transition-all">
+                    </div>
+                    <!-- Time Slot -->
+                    <div>
+                        <label class="block text-xs font-semibold uppercase text-salonDark tracking-wider mb-2">Khung giờ mong muốn *</label>
+                        <select required class="w-full px-4 py-3 rounded-xl border border-salonAccent bg-salonCream/30 focus:outline-none focus:border-salonGold focus:ring-1 focus:ring-salonGold transition-all">
+                            <option value="">-- Chọn giờ trống --</option>
+                            <option value="09:00">09:00 AM</option>
+                            <option value="10:30">10:30 AM</option>
+                            <option value="13:30">01:30 PM</option>
+                            <option value="15:00">03:00 PM</option>
+                            <option value="17:00">05:00 PM</option>
+                            <option value="19:00">07:00 PM</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Service Category Selection -->
+                <div>
+                    <label class="block text-xs font-semibold uppercase text-salonDark tracking-wider mb-2">Dịch vụ quan tâm</label>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                        <label class="flex items-center p-3 border border-salonAccent/60 rounded-xl cursor-pointer hover:bg-salonCream transition-all">
+                            <input type="checkbox" name="services" value="care" class="rounded text-salonGold focus:ring-salonGold mr-3">
+                            <span class="text-sm font-medium text-salonDark">Chăm sóc cơ bản</span>
+                        </label>
+                        <label class="flex items-center p-3 border border-salonAccent/60 rounded-xl cursor-pointer hover:bg-salonCream transition-all">
+                            <input type="checkbox" name="services" value="gel" class="rounded text-salonGold focus:ring-salonGold mr-3">
+                            <span class="text-sm font-medium text-salonDark">Sơn Gel cao cấp</span>
+                        </label>
+                        <label class="flex items-center p-3 border border-salonAccent/60 rounded-xl cursor-pointer hover:bg-salonCream transition-all">
+                            <input type="checkbox" name="services" value="art" class="rounded text-salonGold focus:ring-salonGold mr-3">
+                            <span class="text-sm font-medium text-salonDark">Thiết kế Nail Art</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Notes -->
+                <div>
+                    <label class="block text-xs font-semibold uppercase text-salonDark tracking-wider mb-2">Ghi chú thêm (yêu cầu thợ cụ thể, mẫu móng...)</label>
+                    <textarea rows="3" placeholder="Nhập lời nhắn của bạn gửi tới tiệm tại đây..." class="w-full px-4 py-3 rounded-xl border border-salonAccent bg-salonCream/30 focus:outline-none focus:border-salonGold focus:ring-1 focus:ring-salonGold transition-all"></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="pt-4">
+                    <button type="submit" class="w-full bg-salonDark text-salonCream font-semibold py-4 rounded-xl hover:bg-salonGold hover:text-salonDark hover:shadow-lg transition-all duration-300 transform active:scale-95">
+                        Xác Nhận Gửi Lịch Hẹn
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- CONTACT & FOOTER -->
+    <footer id="lien-he" class="bg-salonDark text-salonCream/80 pt-20 pb-10 border-t border-salonAccent/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-12 gap-12 pb-16 border-b border-salonCream/10">
+            <!-- Col 1: Salon Info -->
+            <div class="md:col-span-5 space-y-4">
+                <a href="#" class="font-serif-title text-2xl font-bold tracking-wider text-salonCream">
+                    CHARM<span class="text-salonGold">NAILS</span>
+                </a>
+                <p class="text-sm font-light leading-relaxed text-salonCream/60 max-w-sm">
+                    Nơi tôn vinh vẻ quyến rũ trên từng ngón tay của bạn. Chúng tôi cam kết mang lại trải nghiệm làm đẹp thư thái tinh tế nhất.
+                </p>
+                <!-- Social media icons -->
+                <div class="flex space-x-4 pt-4">
+                    <a href="#" class="w-10 h-10 rounded-full border border-salonCream/20 flex items-center justify-center text-salonCream hover:border-salonGold hover:text-salonGold transition-colors">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full border border-salonCream/20 flex items-center justify-center text-salonCream hover:border-salonGold hover:text-salonGold transition-colors">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full border border-salonCream/20 flex items-center justify-center text-salonCream hover:border-salonGold hover:text-salonGold transition-colors">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Col 2: Opening Hours -->
+            <div class="md:col-span-3 space-y-4">
+                <h4 class="font-serif-title text-lg font-medium text-salonCream border-l-2 border-salonGold pl-3">Giờ Hoạt Động</h4>
+                <ul class="space-y-2 text-sm font-light text-salonCream/70">
+                    <li>Thứ 2 - Thứ 6: 09:00 - 20:30</li>
+                    <li>Thứ 7 - Chủ Nhật: 08:30 - 21:00</li>
+                    <li class="text-salonGold font-medium text-xs mt-2"><i class="fa-regular fa-clock mr-1"></i> Nhận lịch đặt muộn nhất trước 1 tiếng</li>
+                </ul>
+            </div>
+
+            <!-- Col 3: Direct contact details -->
+            <div class="md:col-span-4 space-y-4">
+                <h4 class="font-serif-title text-lg font-medium text-salonCream border-l-2 border-salonGold pl-3">Thông Tin Liên Hệ</h4>
+                <ul class="space-y-3 text-sm font-light text-salonCream/70">
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-location-dot mt-1 mr-3 text-salonGold"></i>
+                        <span>123 Đường Nguyễn Huệ, Phường Bến Nghé, Quận 1, TP. Hồ Chí Minh</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fa-solid fa-phone mr-3 text-salonGold"></i>
+                        <span>090 123 4567</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fa-solid fa-envelope mr-3 text-salonGold"></i>
+                        <span>contact@charmnails.com</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 flex flex-col sm:flex-row justify-between items-center text-xs font-light text-salonCream/40 space-y-4 sm:space-y-0">
+            <p>&copy; 2026 Charm Nails Salon. All rights reserved.</p>
+            <p>Designed for learning & development.</p>
+        </div>
+    </footer>
+
+    <!-- SUCCESS MODAL (MOCK DIALOG) -->
+    <div id="successModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden items-center justify-center p-4 transition-opacity duration-300 opacity-0">
+        <div class="bg-white rounded-3xl p-8 max-w-sm w-full text-center border border-salonAccent shadow-2xl transform scale-95 transition-transform duration-300">
+            <div class="w-16 h-16 bg-emerald-50 rounded-full flex items-center justify-center text-emerald-500 mx-auto mb-4 border border-emerald-100">
+                <i class="fa-solid fa-circle-check text-3xl"></i>
+            </div>
+            <h3 class="font-serif-title text-xl font-semibold text-salonDark mb-2">Đặt Lịch Thành Công!</h3>
+            <p class="text-sm text-salonSoft font-light mb-6">Hệ thống đã ghi nhận lịch hẹn của bạn. Tiệm sẽ gọi điện xác nhận trong ít phút.</p>
+            <button onclick="closeModal()" class="w-full bg-salonDark text-salonCream font-medium py-3 rounded-xl hover:bg-salonGold hover:text-salonDark transition-colors">
+                Đóng lại
+            </button>
+        </div>
+    </div>
+
+    <!-- CLIENT SIDE INTERACTIVE LOGIC (JS) -->
+    <script>
+        // Mobile Menu Mobile Drawer Toggle Logic
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close menu when a link inside it is clicked
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Form Submit Simulation Logic
+        function handleBookingSubmit(event) {
+            event.preventDefault(); // Stop page refresh
+            
+            const modal = document.getElementById('successModal');
+            
+            // Open modal cleanly with fade and scale animation
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modal.querySelector('div').classList.remove('scale-95');
+            }, 10);
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('successModal');
+            modal.classList.add('opacity-0');
+            modal.querySelector('div').classList.add('scale-95');
+            
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                document.getElementById('bookingForm').reset(); // Reset fields
+            }, 300);
+        }
+    </script>
+</body>
+</html>
